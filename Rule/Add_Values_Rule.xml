@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Add values rule">
+  <Signature returnType="Object">
+    <Inputs>
+      <Argument name="log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="value1">
+        <Description>
+          The value of the identity attribute.  Note that this could be single value or a list of values.
+        </Description>
+      </Argument>
+      <Argument name="value2">
+        <Description>
+          The sailpoint.object.ObjectAttribute for this target.
+        </Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Source>
+  int a = value1;
+  int b = value2;
+  int c = a+b;
+  log.error( "output :: " + c); 
+  return  c;</Source>
+</Rule>
